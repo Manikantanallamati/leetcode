@@ -4,7 +4,7 @@ class Solution:
         b = []
         c = []
         for i in range(len(a)):
-            if nums.count(a[i])>=(nums.count(a[i])//2):
+            if nums.count(a[i])>(len(nums)//2):
                 b.append(a[i])
                 c.append(nums.count(a[i]))
         print(b)
