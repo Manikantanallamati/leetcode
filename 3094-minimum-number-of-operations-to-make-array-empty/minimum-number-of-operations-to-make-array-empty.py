@@ -1,12 +1,9 @@
 class Solution:
     def minOperations(self, nums: List[int]) -> int:
-        mp=defaultdict(int)
-        for i in nums:
-            mp[i]+=1
-        ans=0
-        for i in mp.values():
-            if i==1:
+        c = collections.Counter(nums)
+        i = 0
+        for freq in c.values():
+            if freq == 1:
                 return -1
-            ans+=(i+2)//3
-            
-        return ans 
+            i += ceil(freq / 3)
+        return i
