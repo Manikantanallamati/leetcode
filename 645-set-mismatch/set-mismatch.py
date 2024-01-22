@@ -1,13 +1,14 @@
 class Solution:
     def findErrorNums(self, nums: List[int]) -> List[int]:
-        a = []
+        a,b = 0,0
         b = []
+        # sets = list(set(nums))
         for i in nums:
             if i in b:
-                a.append(i)
+                a=i
                 break
             else:
                 b.append(i)
         c = list(set(nums))
-        a.append((len(nums)*(len(nums)+1)//2-sum(c)))
-        return a
+        b = ((len(nums)*(len(nums)+1)//2-sum(c)))
+        return [a,b]
