@@ -6,7 +6,7 @@ class Solution:
             return 2
         if n==4:
             return 4
-        diff = 2
+        # diff = 2
         prev = 2
         count = 1
         temp = 2
