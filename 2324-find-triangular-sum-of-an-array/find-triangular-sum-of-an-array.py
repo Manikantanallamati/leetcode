@@ -1,8 +1,7 @@
 class Solution:
     def triangularSum(self, nums: List[int]) -> int:
-        for i in range(len(nums)):
-            for j in range(len(nums)-1):
-                nums[j]=int(str(nums[j]+nums[j+1])[-1])
-                # print(nums[j])
-            a = nums.pop()
-        return a
+        res, nCr, n = 0, 1, len(nums) - 1
+        for r, num in enumerate(nums):
+            res = (res + num  * nCr) % 10
+            nCr = nCr * (n - r) // (r + 1)
+        return res
