@@ -9,9 +9,9 @@ class Solution:
                 return -1
         val = sum(nums[:n-1])
         for i in range(n-2,-1,-1):
-            print(val,nums[i+1],nums)
             if val>nums[i+1]:
                 return val+nums[i+1]
+                break
             else:
                 val -= nums[i]
         return -1
