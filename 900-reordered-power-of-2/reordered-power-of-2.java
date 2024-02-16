@@ -1,6 +1,5 @@
 class Solution {
 
-    // boolean ans = false;
     public boolean help(int ind , ArrayList<Integer> a , int[] v , int temp){
 
         if(ind == a.size()) {
@@ -10,7 +9,6 @@ class Solution {
             return false;
         }
 
-        // if(ans) return;
         boolean ans = false;
 
         for(int i=0 ; i<a.size() ; i++){
@@ -22,6 +20,7 @@ class Solution {
                 v[i] = 1;
                 // temp = temp*10 + a.get(i);
                 ans |= help(ind+1 , a , v , (temp*10 + a.get(i)));
+                if(ans) break;
                 v[i] = 0;
             }
         }
