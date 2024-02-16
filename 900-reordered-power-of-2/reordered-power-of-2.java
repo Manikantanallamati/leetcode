@@ -1,16 +1,17 @@
 class Solution {
 
-    boolean ans = false;
-    public void help(int ind , ArrayList<Integer> a , int[] v , int temp){
+    // boolean ans = false;
+    public boolean help(int ind , ArrayList<Integer> a , int[] v , int temp){
 
         if(ind == a.size()) {
 
             // System.out.println(temp + " " + ans);
-            if((temp & (temp-1)) == 0) ans = true;
-            return;
+            if((temp & (temp-1)) == 0) return true;
+            return false;
         }
 
-        if(ans) return;
+        // if(ans) return;
+        boolean ans = false;
 
         for(int i=0 ; i<a.size() ; i++){
 
@@ -20,10 +21,12 @@ class Solution {
 
                 v[i] = 1;
                 // temp = temp*10 + a.get(i);
-                help(ind+1 , a , v , (temp*10 + a.get(i)));
+                ans |= help(ind+1 , a , v , (temp*10 + a.get(i)));
                 v[i] = 0;
             }
         }
+
+        return ans;
     }
 
     public boolean reorderedPowerOf2(int n) {
@@ -37,7 +40,6 @@ class Solution {
 
         int[] v = new int[a.size()];
 
-        help(0 , a , v , 0);
-        return ans;
+        return help(0 , a , v , 0);
     }
 }
