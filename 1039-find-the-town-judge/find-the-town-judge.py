@@ -5,9 +5,6 @@ class Solution:
         for a,b in trust:
             z[a] = 1
             y[b] += 1
-        z[0]=1
-        if z.count(0)>1 or z.count(0)<1:
-            return -1
         for i in range(1,n+1):
             if z[i]==0:
                 if y[i]>= n-1:
