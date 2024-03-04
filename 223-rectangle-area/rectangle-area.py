@@ -7,7 +7,4 @@ class Solution:
         cy1 = max(ay1,by1)
         cy2 = min(ay2,by2)
         over = max(0,cx2-cx1)*max(0,cy2-cy1)
-        # covered1 = abs((abs(ay2)+abs(by1))*(abs(ay1)+abs(by2)))
-
-        # print(first_area,second_area,covered1)
         return (second_area+first_area-over)
